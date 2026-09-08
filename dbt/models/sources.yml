@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    database: REAL_ESTATE_ANALYTICS
+    schema: RAW
+
+    tables:
+      - name: RAW_CITIES
+
+      - name: RAW_DEVELOPERS
+
+      - name: RAW_PROPERTIES
+
+      - name: RAW_TRANSACTIONS
