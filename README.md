@@ -54,7 +54,3 @@ This project addresses these challenges by implementing an automated ingestion, 
 
 <img width="961" height="608" alt="image" src="https://github.com/user-attachments/assets/f6859bf8-3130-44ca-95ad-a17b2dca4343" />
 
-                 ┌─────────────┐
-                 │  Streamlit  │
-                 │  Dashboard  │
-                 └─────────────┘
