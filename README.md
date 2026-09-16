@@ -52,72 +52,8 @@ This project addresses these challenges by implementing an automated ingestion, 
 
 ## 🏗️ Architecture
 
-```text
-                    SOURCE LAYER
-        ┌─────────────────────────────────┐
-        │ Cities CSV                       │
-        │ Developers CSV                   │
-        │ Properties CSV                   │
-        │ Transactions CSV                 │
-        └───────────────┬─────────────────┘
-                        │
-                        ▼
-                 ┌─────────────┐
-                 │   AWS S3    │
-                 │   Landing   │
-                 └──────┬──────┘
-                        │
-                 S3 ObjectCreated
-                        │
-                        ▼
-                 ┌─────────────┐
-                 │     SQS     │
-                 │ Notification│
-                 └──────┬──────┘
-                        │
-                        ▼
-                 ┌─────────────┐
-                 │  Snowpipe   │
-                 │ AUTO_INGEST │
-                 └──────┬──────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │  Snowflake RAW     │
-              │                    │
-              │ RAW_CITIES         │
-              │ RAW_DEVELOPERS     │
-              │ RAW_PROPERTIES     │
-              │ RAW_TRANSACTIONS   │
-              └─────────┬──────────┘
-                        │
-                        ▼
-                  ┌───────────┐
-                  │    dbt    │
-                  │Transform. │
-                  └─────┬─────┘
-                        │
-                        ▼
-             ┌──────────────────────┐
-             │ Snowflake DW         │
-             │                      │
-             │ DIM_DATE             │
-             │ DIM_CITY             │
-             │ DIM_DEVELOPER (SCD2) │
-             │ DIM_PROPERTY (SCD2)  │
-             │ FACT_TRANSACTION     │
-             └──────────┬───────────┘
-                        │
-                        ▼
-             ┌──────────────────────┐
-             │   Semantic Views     │
-             │                      │
-             │ V_CITY_SALES_DAILY   │
-             │ V_DEVELOPER_PERF     │
-             │ V_SEGMENT_MIX        │
-             └──────────┬───────────┘
-                        │
-                        ▼
+<img width="961" height="608" alt="image" src="https://github.com/user-attachments/assets/f6859bf8-3130-44ca-95ad-a17b2dca4343" />
+
                  ┌─────────────┐
                  │  Streamlit  │
                  │  Dashboard  │
